@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>	 
+	<meta charset="UTF-8">  
+	<title>{% block title %}{% endblock %} VidaEconomica: Quién es Quién en la empresa de Málaga</title>
+	<link rel="stylesheet" href="static/css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="static/css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="static/css/general.css">
+	<link rel="stylesheet" href="static/css/jquery-ui-1.10.2.custom.min.css">
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<!--script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script-->
+	<!--script src="static/js/scripts.js.php?d=". <?php echo $basedir; ?>></script-->
+	<script src="static/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<header>
+		<hgroup style="float:left;">
+			<h1>Quién es Quién</h1>
+			<h2>en la empresa de Málaga</h2>
+		</hgroup>
+		<div id="patrocinador" class="peq">Logo patrocinador</div>
+	</header>
+
+	<div class="navbar">
+		<h1>
+			<a class="brand" href="<?php echo $basedir; ?>">
+				<img src="static/images/banner ve.jpg" alt="VidaEconomica: Quién es quién en la empresa de Málaga">
+			</a>
+		</h1>
+		<nav>
+			<div class="input-prepend">
+				<form action="#" class="filterform">
+					<div class="btn-group">
+						<!--span class="add-on">Menú</span-->
+						<button class="btn dropdown-toggle span2" data-toggle="dropdown" type="button">
+							Menú&nbsp;&nbsp;&nbsp;&nbsp;
+							<i class="icon-chevron-down"></i>
+							<!--span class="caret"></span-->
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="empresas">Empresas</a></li>
+							<li><a href="categorias">Categorías</a></li>
+							<li><a href="redessociales">Redes sociales</a></li>
+							<li><a href="vidaeconomica">Vida económica</a></li>
+							<li><a href="desarrollador">Desarrollador</a></li>
+						</ul>
+					</div>
+					<input type="text" placeholder="Buscar empresa" id="busqueda" class="input-large filterinput" id="prependedDropdownButton">
+				</form>
+			</div>
+		</nav>
+	</div>	
+
+	<article>
+		{% block contents %}
+		{% endblock %}
+	</article>
+
+	<footer>
+		<img src="static/images/publicidad.jpg" alt="">
+	</footer>
+</body>
+</html>

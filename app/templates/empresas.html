@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block title %}
+Empresas | {% endblock %}
+{% block contents %}
+<h2>Empresas</h2>
+<ul>
+		{% for row in rows: %}
+	<li{{ loop.cycle('', " class=\"alt\"") | safe }}><a href="empresa?id={{ row[0] }}">{{ row[1] | title }}</a></li>
+		{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,165 @@
+
+article li { height: 40px; /*line-height: 40px;*/ }
+article li { padding-left: 20px; padding-right: 20px; }
+header {  }
+div.navbar { background-color: white; }
+li.alt { background-color: #F2F2F2; }
+/*ul { list-style-type: none; margin-left: 0 }*/
+nav ul { display: none; }
+body { padding-left: 0; padding-right: 0; }
+footer img { position: fixed; bottom: 0; }
+.navbar { position:fixed; box-shadow: 0 0 10px 0  }
+article { padding-top: 140px; padding-bottom: 30px; }
+a, a:visited, a:hover { color: black; text-decoration: none; }
+article a { display: block; }
+form { margin-bottom: 0; }
+nav div {  margin-left: 5px; }
+/*article li.alt:after { content: url("../images/br_chevron_blue.gif"); position: absolute; right: 0; z-index: -1; }*/
+
+
+/* 
+header { position: fixed; background-color: white; }
+article { padding-top: 140px; }
+*/
+
+
+.email, .linkedin, .facebook, .twitter { display: block; float: left;  }
+
+@media (max-width: 479px) {
+
+	.email, .linkedin, .facebook, .twitter { height: 48px; width: 48px; }	
+}
+
+
+@media (min-width: 480px) {
+
+	.email, .linkedin, .facebook, .twitter { height: 72px; width: 72px; }	
+}
+
+
+@media (max-width:479px) {
+
+	body#splash {
+
+		background: url("static/images/drawable-mdpi/splashscreen.png") no-repeat;
+
+	}
+
+
+	header > h1 {
+
+		/*background: url("../images/banner ve.jpg")*/
+
+	}
+
+	.email {
+		background: url(static/images/drawable-mdpi/email.png) no-repeat
+
+	}
+
+	.facebook {
+		background: url(static/images/drawable-mdpi/facebook.png) no-repeat
+
+	}
+
+	.twitter {
+		background: url(static/images/drawable-mdpi/twitter.png) no-repeat
+
+	}
+
+	.linkedin {
+		background: url(static/images/drawable-mdpi/linkedin.png) no-repeat
+
+	}
+
+	footer {
+
+
+
+	}
+	
+}
+
+@media (min-width: 480px) and (max-width:588px) {
+
+	body#splash {
+
+		background: url("static/images/drawable-hdpi/splashscreen.png") no-repeat;
+
+	}
+
+	header > h1 {
+
+		/*background: url("../images/banner ve.jpg")*/
+
+	}
+
+	.email {
+		background: url(static/images/drawable-hdpi/email.png) no-repeat
+
+	}
+
+	.facebook {
+		background: url(static/images/drawable-hdpi/facebook.png) no-repeat
+
+	}
+
+	.twitter {
+		background: url(static/images/drawable-hdpi/twitter.png) no-repeat
+
+	}
+
+	.linkedin {
+		background: url(static/images/drawable-hdpi/linkein.png) no-repeat
+
+	}
+
+	footer {
+
+
+
+	}
+	
+}
+
+@media (min-width:589px) {
+
+	body#splash {
+
+		background: url("static/images/drawable-xhdpi/splashscreen.png") no-repeat;
+
+	}
+
+	header > h1 {
+
+		/*background: url("../images/banner ve.jpg")*/
+
+	}
+
+	.email {
+		background: url(static/images/drawable-xhdpi/email.png) no-repeat
+
+	}
+
+	.facebook {
+		background: url(static/images/drawable-xhdpi/facebook.png) no-repeat
+
+	}
+
+	.twitter {
+		background: url(static/images/drawable-xhdpi/twitter.png) no-repeat
+
+	}
+
+	.linkedin {
+		background: url(static/images/drawable-xhdpi/linkedin.png) no-repeat
+
+	}
+
+	footer {
+
+
+
+	}
+	
+}

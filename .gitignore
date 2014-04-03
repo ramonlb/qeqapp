@@ -1,2 +1,6 @@
 env
 *.pyc
+images
+*.bak
+*.sql
+*.db

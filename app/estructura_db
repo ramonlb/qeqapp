@@ -1,0 +1,100 @@
+-- 
+-- Estructura de tabla para la tabla `actividadesQQ`
+-- 
+
+CREATE TABLE `actividadesQQ` (
+  `IDActividad` integer unsigned NOT NULL ,
+  `actividad` varchar(200) default NULL,
+  PRIMARY KEY  (`IDActividad`)
+) ;
+
+-- 
+-- Estructura de tabla para la tabla `busquedasQQ`
+-- 
+
+CREATE TABLE `busquedasQQ` (
+  `IDBusqueda` integer NOT NULL ,
+  `IDVisita` integer default NULL,
+  `empresa` varchar(100) default NULL,
+  `IDActividad` integer default NULL,
+  `IDLocalidad` integer default NULL,
+  `totalResultados` integer unsigned default NULL,
+  `fecha` date default NULL,
+  `hora` time default NULL,
+  `entraEn` varchar(255) default NULL,
+  PRIMARY KEY  (`IDBusqueda`),
+  foreign KEY (IDActividad) references actividadesQQ(IDActividad),
+  foreign KEY (IDLocalidad) references localidadesQQ(IDLocalidad)
+) ;
+
+-- 
+-- Estructura de tabla para la tabla `cargosQQ`
+-- 
+
+CREATE TABLE `cargosQQ` (
+  `IDCargo` integer unsigned NOT NULL,
+  `cargo` varchar(255) default NULL,
+  PRIMARY KEY  (`IDCargo`)
+) ;
+
+-- 
+-- Estructura de tabla para la tabla `directivosQQ`
+-- 
+
+CREATE TABLE `directivosQQ` (
+  `IDDirectivo` integer unsigned NOT NULL ,
+  `IDEmpresa` integer unsigned default NULL,
+  `IDCargo` integer unsigned default NULL,
+  `otroCargo` varchar(250) default NULL,
+  `nombre` varchar(255) default NULL,
+  `orden` integer unsigned default NULL,
+  PRIMARY KEY  (`IDDirectivo`),
+  foreign KEY (IDEmpresa) references empresasQQ(IDEmpresa),
+  foreign KEY (IDCargo) references cargosQQ(`IDCargo`)
+) ;
+
+-- 
+-- Estructura de tabla para la tabla `empresasQQ`
+-- 
+
+CREATE TABLE `empresasQQ` (
+  `IDEmpresa` integer unsigned NOT NULL ,
+  `nombreComercial` varchar(150) default NULL,
+  `razonSocial` varchar(150) default NULL,
+  `nombrePrincipal` varchar(250) default NULL,
+  `IDActividad` integer unsigned default NULL,
+  `web` varchar(250) default NULL,
+  `direccion` varchar(250) default NULL,
+  `IDLocalidad` integer unsigned default NULL,
+  `provincia` varchar(150) default NULL,
+  `codigoPostal` varchar(10) default NULL,
+  `telefono` varchar(20) default NULL,
+  `email` varchar(100) default NULL,
+  `facebook` text,
+  `twitter` text,
+  `descripcion` text,
+  `ultimaFacturacion` varchar(20) default NULL,
+  `annoUltimaFacturacion` varchar(10) default NULL,
+  `numEmpleados` integer unsigned default NULL,
+  `annoNumEmpleados` varchar(10) default NULL,
+  `nombreContacto` varchar(100) default NULL,
+  `emailContacto` varchar(200) default NULL,
+  `verificada` integer default '0',
+  `fechaAlta` date default NULL,
+  `horaAlta` time default NULL,
+  `fechaUltimaModificacion` date default NULL,
+  `horaUltimaModificacion` time default NULL,
+  PRIMARY KEY  (`IDEmpresa`),
+  foreign KEY (IDActividad) references actividadesQQ(IDActividad),
+  foreign KEY (IDLocalidad) references localidadesQQ(IDLocalidad)
+) ;
+
+-- 
+-- Estructura de tabla para la tabla `localidadesQQ`
+-- 
+
+CREATE TABLE `localidadesQQ` (
+  `IDLocalidad` integer unsigned NOT NULL,
+  `localidad` varchar(250) default NULL,
+  PRIMARY KEY  (`IDLocalidad`)
+) ;

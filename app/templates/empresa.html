@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+{% block contents %}
+<hgroup>
+	<h2>{{ item['nombrePrincipal'] }}</h2>
+	{% if item["razonSocial"] != "" %}
+		{% if item["nombrePrincipal"] == "" %} <hgroup>
+		<h3 class='razonSocial'>{{ item["razonSocial"] }}</h3>
+		</hgroup>
+	{% endif %}
+	{% endif %}
+	{% if item["nombrePrincipal"] != "" and item["razonSocial"] == "" %}
+		</hgroup>
+{% endif %}
+	{% if item["direccion"] != "" %}
+		<p><b>Dirección: </b><span>{{ item["direccion"] }}</span></p>
+	{% endif %}
+
+	{% if 'actividad' in item %}
+		<p><b>Actividad: </b><span>{{ item["actividad"] }}</span></p>
+	{% endif %}
+
+	{% if item["web"] != "" %}
+		<p><b>Web: </b><span>{{ item["web"] }}</span></p>
+	{% endif %}
+
+	{% if item["telefono"] != "" %}
+		<p><b>Telefono: </b><span>{{ item["telefono"] }}</span></p>
+	{% endif %}
+
+	{% if item["email"] != "" %}
+		<p><b>Email: </b><span>{{ item["email"] }}</span></p>
+	{% endif %}
+
+	{% if item["facebook"] != "" %}
+		<p><b>Facebook: </b><span>{{ item["facebook"] }}</span></p>
+	{% endif %}
+
+	{% if item["twitter"] != "" %}
+		<p><b>Twitter: </b><span>{{ item["twitter"] }}</span></p>		
+	{% endif %}
+
+	{% if item["descripcion"] != "" %}
+		<p><b>Descripción: </b><span>{{ item["descripcion"] }}</span></p>
+	{% endif %}
+	
+	{% if (item["numEmpleados"] != "" and item["numEmpleados"] != 0) or item["ultimaFacturacion"] !="" %}
+		<div id='economicos'>
+		<h3>Datos Económicos</h3>
+		{% if item["ultimaFacturacion"] != "" %}
+			<p><b>Última facturación: </b><span>{{ item["ultimaFacturacion"] }} ({{ item["annoUltimaFacturacion"] }})</span></p>
+		{% endif %}
+		{% if item["numEmpleados"] != "" and item["numEmpleados"] != 0 %}
+			<p><b>Número de empleados: </b><span>{{ item["numEmpleados"] }} ({{ item["annoNumEmpleados"] }})</span></p>
+		{% endif %}
+		</div>
+	{% endif %}
+	{% if 'directivos' in item %}
+		<h3>Directivos de contacto</h3>
+		{% for directivo in item['directivos'] %}
+			<p><b>{% if directivo[0] == 'Otro' %}{{ directivo[1] }}{% else %}{{ directivo[0] }}{% endif %}{% if directivo[1] != '' and directivo[0] == directivo[1] %} y {{ directivo[1] }}{% endif %}: </b><span>{{ directivo[2] }}</span></p>
+		{% endfor %}
+	{% endif %}
+{% endblock %}
